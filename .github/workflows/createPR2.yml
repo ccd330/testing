@@ -14,8 +14,11 @@ jobs:
         run: date +%s > report.txt
 
       - name: Create Pull Request
-        id: cpr
-        uses: peter-evans/create-pull-request@v4
+        uses: peter-evans/create-pull-request@v3.10.1
         with:
-          token: ${{ secrets.PAT }}
-          commit-message: Update report
+          token: ${{ secrets.GH_TOKEN }}
+          commit-message: Auto Pull Request
+          title: Your desired title
+          body: Auto-created Pull Request
+          branch: ${{ github.ref }} 
+          base: main 
