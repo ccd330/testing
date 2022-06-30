@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - feature/**
-    branches-ignore: master
 jobs:
   action-pull-request:
     runs-on: ubuntu-latest
